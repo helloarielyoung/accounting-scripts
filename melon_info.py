@@ -29,32 +29,17 @@ def gather_melon_data():
     return melon_data
 
 
-def print_melon_from_dict(melon_dict):
+def print_melon(melon_dict):
     """Prints the melon data from the melon dictionary."""
 
-    for melon in melon_dict:
+    for melon, info in melon_dict.items():
         print """%s
         seedless: %s
         price: %d
         flesh_color:  %s
         weight: %s
-        rind_color: %s""" % (melon_dict[melon], melon_dict[melon][1],
-                             melon_dict[melon][0], melon_dict[melon][2],
-                             melon_dict[melon][4], melon_dict[melon][3])
+        rind_color: %s""" % (melon, info[1],
+                             info[0], info[2],
+                             info[4], info[3])
 
-print_melon_from_dict(gather_melon_data())
-
-def print_melon(name, seedless, price):
-    """Print each melon."""
-
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
-
-    print "{}s {} seeds and are ${:.2f}".format(name, have_or_have_not, price)
-
-
-# for i in melon_names:
-#     print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
-
-gather_melon_data()
+print_melon(gather_melon_data())
