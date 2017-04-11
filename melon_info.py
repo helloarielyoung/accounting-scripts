@@ -19,7 +19,7 @@ def gather_melon_data():
     #iterate through the three dictionaries and put the data into melon_data
     #first, get the melon names
     for i in melon_names:
-        melon_data[melon_names[i]] = tuple([melon_prices[i],
+        melon_data[melon_names[i]] = tuple([melon_prices.get(melon_prices[i], 0),
                                             melon_seedlessness[i],
                                             #not sure how to do this if they don't exist
                                             #tried to use get, but failed
