@@ -26,9 +26,23 @@ def gather_melon_data():
                                             melon_flesh_color.get(i, 'unknown'),
                                             melon_rind_color.get(i, 'unknown'),
                                             melon_avg_weight.get(i, 'unknown')])
+    return melon_data
 
-    print melon_data
 
+def print_melon_from_dict(melon_dict):
+    """Prints the melon data from the melon dictionary."""
+
+    for melon in melon_dict:
+        print """%s
+        seedless: %s
+        price: %d
+        flesh_color:  %s
+        weight: %s
+        rind_color: %s""" % (melon_dict[melon], melon_dict[melon][1],
+                             melon_dict[melon][0], melon_dict[melon][2],
+                             melon_dict[melon][4], melon_dict[melon][3])
+
+print_melon_from_dict(gather_melon_data())
 
 def print_melon(name, seedless, price):
     """Print each melon."""
